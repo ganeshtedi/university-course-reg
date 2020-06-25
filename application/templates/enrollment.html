@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 text-center">
+        {% if not classes %}
+        <h1>you are not enrolled in any class</h1>
+        {% else %}
+        <h1> You are enrolled in..</h1>
+        {% for data in classes %}
+        <p>course id- {{ data.r2["courseID"] }}</p>
+        <p>title- {{ data.r2['title'] }}</p>
+        <p>course term- {{ data.r2['term'] }}</p>
+        {% endfor %}
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>New User Registration</h2>
+
+<div class="container">
+    <form name="register" action="" method="POST" novalidate>
+        <legend>Register</legend>     
+        {{ form.hidden_tag() }}       
+            <p> {{ form.email.label }}</br>
+                {{ form.email }}
+                {% for error in form.email.errors %}
+                 <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </p>
+        
+            <p> {{ form.password.label }}</br>
+                {{ form.password }}
+                {% for error in form.password.errors %}
+                 <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </p>
+        
+            <p> {{ form.passwordconfirm.label }}</br>
+                {{ form.passwordconfirm }}
+                {% for error in form.passwordconfirm.errors %}
+                 <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </p>
+        
+            <p> {{ form.fname.label }}</br>
+                {{ form.fname }}
+                {% for error in form.fname.errors %}
+                 <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </p>
+        
+            <p> {{ form.lname.label }}</br>
+                {{ form.lname }}
+                {% for error in form.lname.errors %}
+                 <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </p>
+        
+            <p> 
+                {{ form.submit() }}
+            </p>
+    </form>
+</div>
+{% endblock %}
